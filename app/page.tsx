@@ -1,12 +1,30 @@
-import Image from "next/image";
-import ProductList from "@/components/Header";
+import Head from 'next/head'
+
+
+import FeaturesSection from '@/components/FeaturesSection'
+
+import TestimonialsSection from '@/components/TestimonialsSection'
+import FeaturedProductsSection from '@/components/FeaturedProductsSection'
+import CTASection from '@/components/CTASection'
+import HeroSection from '@/components/HeroSection'
 
 export default function Home() {
   return (
-    <main className="h-screen w-full text-white">
-        <ProductList />
-    
-   </main>
-    
-  );
+    <div>
+      <Head>
+        <title>Farmers' Marketplace</title>
+        <meta name="description" content="Connect with local farmers for fresh, organic produce" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main>
+        <HeroSection />
+        <FeaturesSection />
+        <TestimonialsSection />
+        <FeaturedProductsSection />
+        <CTASection />
+      </main>
+    </div>
+  )
 }
+
