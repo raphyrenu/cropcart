@@ -1,3 +1,5 @@
+
+
 export default function HeroSection() {
     return (
       <section className="bg-cover bg-center h-screen" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}>

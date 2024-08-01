@@ -1,5 +1,7 @@
 // components/ProductList.js
 "use client";
+
+import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 
 // Sample data
@@ -47,15 +49,15 @@ const products = [
 ];
 
 const ProductList = () => {
-  const [productList, setProductList] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [productList, setProductList] = useState<any>([]);
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [searchQuery, setSearchQuery] = useState<any>('');
 
   useEffect(() => {
     setProductList(products);
   }, []);
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: any) => {
     setSearchQuery(e.target.value);
   };
 

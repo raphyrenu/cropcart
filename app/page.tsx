@@ -1,14 +1,18 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 
 import FeaturesSection from '@/components/FeaturesSection'
+
 
 import TestimonialsSection from '@/components/TestimonialsSection'
 import FeaturedProductsSection from '@/components/FeaturedProductsSection'
 import CTASection from '@/components/CTASection'
 import HeroSection from '@/components/HeroSection'
 
+
 export default function Home() {
+  
   return (
     <div>
       <Head>
@@ -17,13 +21,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className='scroll'>
         <HeroSection />
         <FeaturesSection />
         <TestimonialsSection />
         <FeaturedProductsSection />
         <CTASection />
+
+        <Link href="/pages">
+          Go to Product Page
+        </Link>
       </main>
+      
     </div>
   )
 }
