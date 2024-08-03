@@ -28,9 +28,7 @@ export default function Home() {
         <FeaturedProductsSection />
         <CTASection />
 
-        <Link href="/pages">
-          Go to Product Page
-        </Link>
+        
       </main>
       
     </div>

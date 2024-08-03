@@ -4,6 +4,13 @@
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 
+type Array ={
+  id: number
+  name: string
+  price: string
+  description: string
+  image : string
+}
 // Sample data
 const products = [
   { id: 1, name: 'Organic Apples', price: '$3.00/kg', description: 'Fresh organic apples from local farms', image: '/images/apple.jpg' },
@@ -49,19 +56,20 @@ const products = [
 ];
 
 const ProductList = () => {
-  const [productList, setProductList] = useState<any>([]);
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [productList, setProductList] = useState<Array |number[] |any>([]);
+  const [selectedProduct, setSelectedProduct] = useState<Array|null>(null);
   const [searchQuery, setSearchQuery] = useState<any>('');
 
   useEffect(() => {
-    setProductList(products);
+    const ShuffledProducts : Array = products.slice(0,10)
+    setProductList(ShuffledProducts);
   }, []);
 
   const handleSearch = (e: any) => {
     setSearchQuery(e.target.value);
   };
 
-  const filteredProducts = products.filter(product =>
+  const filteredProducts = pr.filter(product =>
     product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     product.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
