@@ -1,5 +1,8 @@
-* ,
-.scroll {
+*
+{
     scroll-behavior: smooth;
    
+}
+.pan {
+    background-image: url(/images/Colored\ Shapes.svg);
 }

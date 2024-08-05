@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import './scroll.css'
+
 
 
 import FeaturesSection from '@/components/FeaturesSection'
@@ -14,7 +16,7 @@ import HeroSection from '@/components/HeroSection'
 export default function Home() {
   
   return (
-    <div>
+    <div className='pan'>
       <Head>
         <title>Farmers' Marketplace</title>
         <meta name="description" content="Connect with local farmers for fresh, organic produce" />

@@ -2,9 +2,9 @@
 
 
 const products = [
-    { id: 1, name: 'Organic Apples', price: '$3.00/kg', image: '/images/hello.png' },
-    { id: 2, name: 'Free-Range Eggs', price: '$5.00/dozen', image: '/images/tomato.jpg' },
-    { id: 3, name: 'Local Carrots', price: '$2.50/kg', image: '/images/apple.jpg' },
+    { id: 1, name: 'Organic Apples', price: '$3.00/kg', image: '/images/apple.jpg' },
+    { id: 2, name: 'Free-Range Eggs', price: '$5.00/dozen', image: '/images/eggs.jpg' },
+    { id: 3, name: 'Local Carrots', price: '$2.50/kg', image: '/images/carrots.jpg' },
   ]
   
   export default function FeaturedProductsSection() {
