@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import './scroll.css'
+import Header from '@/components/Header'
 
 
 
@@ -20,10 +21,11 @@ export default function Home() {
       <Head>
         <title>Farmers' Marketplace</title>
         <meta name="description" content="Connect with local farmers for fresh, organic produce" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="../public/images/carrots.jpg" />
       </Head>
 
-      <main className='scroll'>
+      <main className='scroll overflow-hidden'>
+        <Header/>
         <HeroSection />
         <FeaturesSection />
         <TestimonialsSection />

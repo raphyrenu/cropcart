@@ -3,7 +3,7 @@
 import products from './ProductsList'
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { FaCartShopping } from 'react-icons/fa6';
+import { FaSearch } from 'react-icons/fa';
 
 type Array = {
   id: number;
@@ -17,9 +17,10 @@ type Array = {
 
 const ProductList = () => {
   const [productList, setProductList] = useState<Array[]>([]);
-  const [selectedProduct, setSelectedProduct] = useState<Array | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Array|null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [cart, setCart] = useState<Array[]>([]);
+  const [time, setTime] = useState(false)
 
   useEffect(() => {
 
@@ -27,7 +28,7 @@ const ProductList = () => {
 
   }, []);
 
-  const handleSearch = (e: any) => {
+  const handleSearch = (e :any) => {
     setSearchQuery(e.target.value);
   };
  
@@ -37,33 +38,43 @@ const ProductList = () => {
       product.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  useEffect(()=> {
+    setTimeout(() => {
+       setTime(true)
+     }, 300)
+  }, [])
 
-  const items = cart.length
+  
+
+
+  const items =( cart.length) + 1
   function handleClick() {
                      console.log(selectedProduct)
   }
 
   return (
-    <div className="">
+    <div className="pt-20">
       <h1 className="text-1xl font-bold mb-4 md:text-3xl sm:text-2xl">
-        Here are{" "}
+        <span className='hidden lg:inline md:inline'>Here are{" "}</span>
         <span className="text-gray-500 font-extralight">Products </span>for{" "}
         <span className="text-green-600 font-serif text-xl md:text-4xl sm:text-2xl">Farmers</span>
       </h1>
 
-      <div className="flex">
+      <div className="group flex flex-row right-2 hover:w-64 absolute top-16 mt-1 md:top-20 lg:top-20 lg:w-64 bg-white py-1 lg:pl-2 lg:plr-0 rounded-lg px-4">
+        <FaSearch className='flex-1 max-w-4 text-red-400 lg:min-w-3 ld:max-w-5' size={30}/>
         <input
           type="text"
           placeholder="Search products..."
           value={searchQuery}
           onChange={handleSearch}
-          className="mb-4 p-2 border lg:text-gray-500 rounded text-gray-800 outline-none px-5 right-0 absolute top-1 lg:bg-black"
+          className="group-hover:flex hidden group-hover:max-w-56 lg:flex px-4 outline-none text-gray-800 lg:max-w-56"
         />
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
         {filteredProducts.length === 0
-          ? "Feching databases... "
+          ? 
+          time?'No item found':'Feching to db...'
           : filteredProducts.map((product) => (
               <div
                 key={product.id}
@@ -83,10 +94,10 @@ const ProductList = () => {
       </div>
 
       {selectedProduct && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white text-slate-950 p-6 rounded-lg shadow-md max-w-2xl w-full relative px-12">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center mt-10">
+          <div className="bg-white text-slate-950 p-5 rounded-lg shadow-md max-w-xl w-full relative px-12 ">
             <button
-              className="absolute top-2 right-4 text-gray-700 text-2xl"
+              className="absolute top-5 right-4 text-gray-700 text-2xl"
               onClick={() => setSelectedProduct(null)}
             >
               x
@@ -95,7 +106,7 @@ const ProductList = () => {
             <img
               src={selectedProduct.image}
               alt={selectedProduct.name}
-              className="w-full h-80 object-cover rounded-md mb-4 shadow-slate-900 shadow-2xl"
+              className="w-full h-64 object-cover rounded-md mb-4 shadow-slate-900 shadow-2xl"
             />
             <p className="text-gray-700 mb-2">{selectedProduct.price}</p>
             <p>{selectedProduct.description}</p>
