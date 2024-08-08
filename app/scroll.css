@@ -3,15 +3,12 @@
     scroll-behavior: smooth;
    
 }
-.header {
-    transition: all 1s;
-    border-radius: 10px;
-}
-.header:hover {
-    background-color: rgba(0, 128, 0, 0.148);
-   
-}
 
 .drop {
     transition: all 2s;
 }
+
+
+
+
+
