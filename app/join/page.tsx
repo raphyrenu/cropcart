@@ -1,9 +1,9 @@
 import React from 'react'
-import JoinPage from '@/pages/joinPage'
+import JoinPage from '@/pages/JoinPage'
 
 function page() {
   return (
-   <div>
+   <div className=''>
     <JoinPage/>
     </div>
   )
