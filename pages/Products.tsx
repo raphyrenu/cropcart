@@ -53,7 +53,7 @@ const ProductList = () => {
   }
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-none">
       <h1 className="text-1xl font-bold mb-4 md:text-3xl sm:text-2xl">
         <span className='hidden lg:inline md:inline'>Here are{" "}</span>
         <span className="text-gray-500 font-extralight">Products </span>for{" "}
