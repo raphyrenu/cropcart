@@ -1,0 +1,27 @@
+@media screen and (min-width: 1000px) {
+    
+
+
+
+.hello{
+    perspective: 2000px;
+    form{
+       transform: rotateX(30deg);
+    }
+
+    .number{
+        -moz-appearance: textfield;
+    }
+    .number::-webkit-inner-spin-button,
+    .number::-webkit-outer-spin-button{
+        display: none;
+    }
+}
+
+}
+
+.hello {
+    form {
+        transform: rotateX(none);
+    }
+}
