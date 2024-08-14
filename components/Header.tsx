@@ -35,7 +35,7 @@ function Header() {
         </ul>
       </div>
       <div className="hidden md:flex lg:flex">
-        <ul className="flex flex-row-reverse">
+        <ul className="flex  flex-row-reverse">
           {accountList.map((account) => (
             <a
               href={account.link}
