@@ -61,7 +61,7 @@ function Header() {
       <div
         className={`${
           clicked
-            ? "flex drop absolute  h-screen justify-end top-0 w-screen p-0"
+            ? "flex  drop absolute  h-screen justify-end top-0 w-screen p-0"
             : "hidden"
         }`}
         onClick={undrop}
